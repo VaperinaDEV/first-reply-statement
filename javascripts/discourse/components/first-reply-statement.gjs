@@ -4,7 +4,7 @@ import { htmlSafe } from "@ember/template";
 import { eq } from "truth-helpers";
 import replaceEmoji from "discourse/helpers/replace-emoji";
 import dIcon from "discourse-common/helpers/d-icon";
-import { i18n } from "discourse-i18n";
+import I18n from "discourse-i18n";
 
 export default class FirstReplyStatement extends Component {
   @tracked belowOP = this.args.outletArgs.belowOP ? true : false;
@@ -28,11 +28,11 @@ export default class FirstReplyStatement extends Component {
   }
 
   get title() {
-    return i18n(themePrefix("first_replier.title"));
+    return I18n.t(themePrefix("first_replier.title"));
   }
 
   get description() {
-    return i18n(themePrefix("first_replier.description"));
+    return I18n.t(themePrefix("first_replier.description"));
   }
 
   <template>
