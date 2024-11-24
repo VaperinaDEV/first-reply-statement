@@ -13,8 +13,23 @@ export default class FirstReplyStatement extends Component {
     return this.args.outletArgs.model.get("details");
   }
 
+  get categoryId() {
+    return this.args.outletArgs.model.get("category_id");
+  }
+
+  get disabledCategories() {
+    const categoriesId = settings.disabled_categories
+      .split("|")
+      .map((id) => parseInt(id, 10));
+
+    return categoriesId.includes(this.categoryId);
+  }
+
   get shouldShow() {
-    if (this.args.outletArgs.model.archetype === "private_message") {
+    if (
+      this.args.outletArgs.model.archetype === "private_message" ||
+      this.disabledCategories
+    ) {
       return;
     }
 
