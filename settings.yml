@@ -1,3 +1,8 @@
+disabled_categories:
+  default: ""
+  type: list
+  list_type: category
+  description: "Choose the categories in which you want the statement not to appear"
 image_type:
   default: "icon"
   type: enum
