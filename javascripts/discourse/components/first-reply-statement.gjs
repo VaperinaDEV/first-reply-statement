@@ -13,6 +13,10 @@ export default class FirstReplyStatement extends Component {
     return this.args.outletArgs.model.get("details");
   }
 
+  get disabledCategories() {
+    return settings.disabled_categories.split("|").map((id) => parseInt(id, 10)).filter((id) => id);
+  }
+
   get shouldShow() {
     if (this.args.outletArgs.model.archetype === "private_message") {
       return;
@@ -21,7 +25,8 @@ export default class FirstReplyStatement extends Component {
     if (
       this.belowOP &&
       this.args.outletArgs.model.posts_count === 1 &&
-      this.topicDetails.can_create_post
+      this.topicDetails.can_create_post &&
+      !this.disabledCategories
     ) {
       return true;
     }
