@@ -1,0 +1,46 @@
+image_type:
+  default: "icon"
+  type: enum
+  choices:
+    - image
+  description: "Choose the image type you want to use in statement"
+icon:
+  default: "ghost"
+  type: string
+  description: "Icon name"
+svg_icons:
+  default: "ghost"
+  type: list
+  list_type: "compact"
+  description: "List of FontAwesome 6 icons used in this theme component"
+image:
+  default: ""
+  type: upload
+  description: "Upload the image you want to use in statement"
+position:
+  default: "center"
+  type: enum
+  choices:
+    - flex-start
+    - flex-end
+  description: "Choose the statement horizontal position. flex-start = left, flex-end = right"
+background:
+  default: "transparent"
+  type: string
+  description: "Set the background of the statement"
+icon_image_width:
+  default: "4.5em"
+  type: string
+  description: "Set the icon or image width"
+icon_color:
+  default: "var(--primary-200)"
+  type: string
+  description: "Set the icon color"
+title_color:
+  default: "var(--primary)"
+  type: string
+  description: "Set the title color"
+description_color:
+  default: "var(--primary-high)"
+  type: string
+  description: "Set the description color"

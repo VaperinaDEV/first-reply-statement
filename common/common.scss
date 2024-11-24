@@ -1,0 +1,40 @@
+.first-reply-statement {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: #{$position};
+  background: #{$background};
+  border-top: 1px solid var(--primary-low);
+  max-width: calc(var(--topic-avatar-width) + var(--topic-body-width) + var(--topic-body-width-padding)* 2 - 2em);
+  padding: 1em;
+  gap: 1em;
+  
+  .first-replier {
+    &.--image {
+      .d-icon {
+        font-size: #{$icon-image-width}; 
+        color: #{$icon-color};
+      }
+      .img {
+        max-width: #{$icon-image-width};
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    &.--description {
+      display: flex;
+      flex-direction: column;
+      span {
+        .mobile-view & {
+          font-size: var(--font-down-1);
+        }
+        color: #{$description-color};
+        &:first-child {
+          color: #{$title-color};
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
