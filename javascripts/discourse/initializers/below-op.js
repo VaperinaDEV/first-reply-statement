@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { withSilencedDeprecations } from "discourse/lib/deprecated";
 import { withPluginApi } from "discourse/lib/plugin-api";
-import { RenderGlimmer } from "discourse/widgets/render-glimmer";
+import RenderGlimmer from "discourse/widgets/render-glimmer";
 import { hbs } from "ember-cli-htmlbars";
 import FirstReplyStatement from "../components/first-reply-statement";
 
@@ -99,7 +99,7 @@ function firstReplyPostOld(api) {
       new RenderGlimmer(
         helper.widget,
         "div.first-reply-statement-wrapper",
-        hbs`<FirstReplyStatement @model={{@data.model}} @belowOP={{@data.belowOP}}/>`,
+        hbs`<FirstReplyStatement @outletArgs={{@data}}/>`,
         {
           model: topic,
           belowOP: true,
