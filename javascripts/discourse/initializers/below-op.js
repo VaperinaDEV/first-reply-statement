@@ -56,7 +56,7 @@ function firstReplyPost(api) {
 export default {
   name: "first-reply-statement",
   initialize() {
-    withPluginApi("0.8.7", (api) => {
+    withPluginApi((api) => {
       firstReplyPost(api);
     });
   }
